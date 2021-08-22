@@ -2,9 +2,12 @@
 
 ENV_DIR=${3:-}
 build_dir=${1:-}
+npmrc="$(cat $ENV_DIR/NPMRC)"
+credentials="$(cat $ENV_DIR/CREDENTIALS)"
+token="$(cat $ENV_DIR/TOKEN)"
 
 echo "-----> Adding npm registry entry to .npmrc using environment variable NPM_TOKEN 😀"
-echo "${NPMRC}" > "${build_dir}/.npmrc"
-echo "${CREDENTIALS}" > "${build_dir}/internal/script/syncLocale/credentials.json"
-echo "${TOKEN}" > "${build_dir}/internal/script/syncLocale/token.json"
+echo "${npmrc}" > "${build_dir}/.npmrc"
+echo "${credentials}" > "${build_dir}/internal/script/syncLocale/credentials.json"
+echo "${token}" > "${build_dir}/internal/script/syncLocale/token.json"
 exit 0
