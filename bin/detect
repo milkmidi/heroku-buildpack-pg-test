@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "heroku-buildpack-pg-test"
+exit 0
